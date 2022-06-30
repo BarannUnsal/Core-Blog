@@ -10,3 +10,15 @@ D:\USERDATA\Desktop\EntityLayer\obj\Debug\net5.0\EntityLayer.csproj.CoreCompileI
 D:\USERDATA\Desktop\EntityLayer\obj\Debug\net5.0\EntityLayer.dll
 D:\USERDATA\Desktop\EntityLayer\obj\Debug\net5.0\ref\EntityLayer.dll
 D:\USERDATA\Desktop\EntityLayer\obj\Debug\net5.0\EntityLayer.pdb
+D:\USERDATA\Desktop\Core\EntityLayer\bin\Debug\net5.0\EntityLayer.deps.json
+D:\USERDATA\Desktop\Core\EntityLayer\bin\Debug\net5.0\EntityLayer.dll
+D:\USERDATA\Desktop\Core\EntityLayer\bin\Debug\net5.0\ref\EntityLayer.dll
+D:\USERDATA\Desktop\Core\EntityLayer\bin\Debug\net5.0\EntityLayer.pdb
+D:\USERDATA\Desktop\Core\EntityLayer\obj\Debug\net5.0\EntityLayer.csproj.AssemblyReference.cache
+D:\USERDATA\Desktop\Core\EntityLayer\obj\Debug\net5.0\EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\USERDATA\Desktop\Core\EntityLayer\obj\Debug\net5.0\EntityLayer.AssemblyInfoInputs.cache
+D:\USERDATA\Desktop\Core\EntityLayer\obj\Debug\net5.0\EntityLayer.AssemblyInfo.cs
+D:\USERDATA\Desktop\Core\EntityLayer\obj\Debug\net5.0\EntityLayer.csproj.CoreCompileInputs.cache
+D:\USERDATA\Desktop\Core\EntityLayer\obj\Debug\net5.0\EntityLayer.dll
+D:\USERDATA\Desktop\Core\EntityLayer\obj\Debug\net5.0\ref\EntityLayer.dll
+D:\USERDATA\Desktop\Core\EntityLayer\obj\Debug\net5.0\EntityLayer.pdb

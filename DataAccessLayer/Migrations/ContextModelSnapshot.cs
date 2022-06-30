@@ -77,11 +77,37 @@ namespace DataAccessLayer.Migrations
                     b.Property<int>("CategoryID")
                         .HasColumnType("integer");
 
+                    b.Property<int>("WriterID")
+                        .HasColumnType("integer");
+
                     b.HasKey("BlogID");
 
                     b.HasIndex("CategoryID");
 
+                    b.HasIndex("WriterID");
+
                     b.ToTable("Blogs");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.BlogRating", b =>
+                {
+                    b.Property<int>("BlogRatingID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<int>("BlogID")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("BlogRatingCount")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("BlogTotalScore")
+                        .HasColumnType("integer");
+
+                    b.HasKey("BlogRatingID");
+
+                    b.ToTable("BlogRatings");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Category", b =>
@@ -113,6 +139,9 @@ namespace DataAccessLayer.Migrations
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<int>("BlogID")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("BlogScore")
                         .HasColumnType("integer");
 
                     b.Property<string>("CommentContent")
@@ -167,6 +196,84 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("Contacts");
                 });
 
+            modelBuilder.Entity("EntityLayer.Concrete.Message", b =>
+                {
+                    b.Property<int>("MessageID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<DateTime>("MessageDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("MessageDetails")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("MessageStatus")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Receiver")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Sender")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Subject")
+                        .HasColumnType("text");
+
+                    b.HasKey("MessageID");
+
+                    b.ToTable("Messages");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.NewsLetter", b =>
+                {
+                    b.Property<int>("MailID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("Mail")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("MailStatus")
+                        .HasColumnType("boolean");
+
+                    b.HasKey("MailID");
+
+                    b.ToTable("NewsLetters");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Notification", b =>
+                {
+                    b.Property<int>("NotificationID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<DateTime>("NotificationDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("NotificationDetails")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("NotificationStatus")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("NotificationSymbol")
+                        .HasColumnType("text");
+
+                    b.Property<string>("NotificationType")
+                        .HasColumnType("text");
+
+                    b.Property<string>("NotifictaionColor")
+                        .HasColumnType("text");
+
+                    b.HasKey("NotificationID");
+
+                    b.ToTable("Notifications");
+                });
+
             modelBuilder.Entity("EntityLayer.Concrete.Writer", b =>
                 {
                     b.Property<int>("WriterID")
@@ -180,10 +287,16 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Password")
                         .HasColumnType("text");
 
+                    b.Property<string>("RePassword")
+                        .HasColumnType("text");
+
                     b.Property<string>("WriterAbout")
                         .HasColumnType("text");
 
                     b.Property<string>("WriterImage")
+                        .HasColumnType("text");
+
+                    b.Property<string>("WriterMail")
                         .HasColumnType("text");
 
                     b.Property<string>("WriterName")
@@ -205,7 +318,15 @@ namespace DataAccessLayer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("EntityLayer.Concrete.Writer", "Writer")
+                        .WithMany("Blogs")
+                        .HasForeignKey("WriterID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Category");
+
+                    b.Navigation("Writer");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Comment", b =>
@@ -227,6 +348,11 @@ namespace DataAccessLayer.Migrations
             modelBuilder.Entity("EntityLayer.Concrete.Category", b =>
                 {
                     b.Navigation("Blog");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Writer", b =>
+                {
+                    b.Navigation("Blogs");
                 });
 #pragma warning restore 612, 618
         }

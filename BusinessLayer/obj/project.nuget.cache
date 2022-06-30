@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "sNpn6Iyu2ANfVxmEAySkai78bDZ0S9fLdh6YYRIWxboOPnAyEx8bowknvixqpWVTK7wrHKM4PaZiZcwznIIx2Q==",
+  "dgSpecHash": "Cev1Gec0CKZR/qxgNuhsH77L2Fsny/i2l0Wk6RGcVe1pj66VefjimjYiWjNhA72thAXGS1/yoTUzz1ZvccJVWA==",
   "success": true,
   "projectFilePath": "D:\\USERDATA\\Desktop\\Core\\BusinessLayer\\BusinessLayer.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\SIA-OF1\\.nuget\\packages\\fluentvalidation\\10.3.3\\fluentvalidation.10.3.3.nupkg.sha512",
+    "C:\\Users\\SIA-OF1\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.3.3\\fluentvalidation.aspnetcore.10.3.3.nupkg.sha512",
+    "C:\\Users\\SIA-OF1\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.3.3\\fluentvalidation.dependencyinjectionextensions.10.3.3.nupkg.sha512",
     "C:\\Users\\SIA-OF1\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.9\\microsoft.entityframeworkcore.5.0.9.nupkg.sha512",
     "C:\\Users\\SIA-OF1\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.9\\microsoft.entityframeworkcore.abstractions.5.0.9.nupkg.sha512",
     "C:\\Users\\SIA-OF1\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.9\\microsoft.entityframeworkcore.analyzers.5.0.9.nupkg.sha512",

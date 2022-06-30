@@ -1,0 +1,44 @@
+﻿@model CoreDome.Models.AddProfileImage
+@{
+    ViewData["Title"] = "WriterAdd";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<h1>WriterAdd</h1>
+<form class="form-grop" method="post" enctype="multipart/form-data">
+    @using (Html.BeginForm("WriterEditProfile", "Writer", FormMethod.Post))
+    {
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Yazar Profili Güncelleme</h4>
+                    <form class="forms-sample">
+                        <div class="form-group">
+                            <label for="exampleInputName1">isim</label>
+                            <input type="text" class="form-control" id="exampleInputName1" asp-for="WriterName" placeholder="İsim">
+                        </div>
+                        @Html.HiddenFor(x=>x.WriterID)
+                        <div class="form-group">
+                            <label for="exampleInputEmail3">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail3" asp-for="WriterMail" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword4">Şifre</label>
+                            <input type="password" class="form-control" id="exampleInputPassword4" asp-for="Password" placeholder="Şifre">
+                        </div>
+                        <div class="form-group">
+                            <label>Yazar Görsel</label>
+                            <input type="file" asp-for="WriterImage">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleTextarea1">Hakkımda</label>
+                            <textarea class="form-control" id="exampleTextarea1" asp-for="WriterAbout" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-gradient-primary mr-2">Güncelle</button>
+                        <button class="btn btn-light">İptal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+</form>
